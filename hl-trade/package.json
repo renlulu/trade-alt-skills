@@ -1,0 +1,14 @@
+{
+  "name": "hl-trade-skill",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Hyperliquid perps trading CLI for the hl-trade agent skill",
+  "bin": {
+    "hl": "./scripts/hl.mjs"
+  },
+  "dependencies": {
+    "@nktkas/hyperliquid": "0.32.2",
+    "viem": "2.51.2"
+  }
+}
