@@ -96,7 +96,7 @@ function usd(n) {
 // trade.xyz spans the core perps plus the "xyz" builder dex. Each dex has an
 // asset-id offset (100000 + dexIndex*10000 + indexInUniverse); the offset routes
 // an order to the right dex when it's placed.
-const PERP_DEXS = ["", "xyz"];
+const PERP_DEXS = ["", "xyz", "flx", "hyna", "km", "abcd", "cash", "para"];
 let _dexIdx = null;
 async function dexIndexes() {
   if (_dexIdx) return _dexIdx;
