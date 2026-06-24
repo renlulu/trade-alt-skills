@@ -88,8 +88,15 @@ node scripts/hl.mjs cancel --coin ETH --all --yes
   significant figures and ≤ `6 - szDecimals` decimals (Hyperliquid's rules).
 - After submitting, run `hl account` / `hl orders` to confirm the result.
 
-## Scope
+## Markets & collateral
 
-v1 covers **core Hyperliquid perpetuals**. Spot and HIP-3 (builder-deployed dex,
-e.g. the `xyz` markets) are not yet supported here — their asset-id mapping
-differs. For read-only leaderboard data, see the companion `hl-leaderboard` skill.
+Covers **core Hyperliquid perps and the `xyz` HIP-3 dex** (tokenised stocks like
+`xyz:SPCX`, `xyz:TSLA`). Pass the dex-qualified coin for stocks (`--coin xyz:TSLA`);
+bare symbols resolve too when unambiguous.
+
+Accounts use **unified collateral**: your USDC backs perp positions and the
+reserved margin is held inside the USDC balance. `hl account` reports
+`Collateral (USDC)`, reserved/available margin, unrealized PnL, and equity-if-closed
+— it never double-counts perp equity and spot USDC.
+
+For read-only leaderboard data, see the companion `hl-leaderboard` skill.
